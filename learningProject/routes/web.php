@@ -1,29 +1,38 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/test', function () {
+        return view('testing');
+    });
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+
+    Route::get('/overview', function () {
+        return view('mainPages.game_overview');
+    });
+    
+});
+
+// Redirect guests to login
 Route::get('/', function () {
-    return view('welcome'); // returns the welcome.blade.php file 
+    return redirect(Auth::check() ? '/dashboard' : '/login');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::get('/about', function () { // if page is /about 
-    return view('about'); // returns the welcome.blade.php file 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/testing', function () { 
-    return view('testing'); 
-});
-
-
-
-// ? RANDOM LEARNING ROUTES
-
-Route::get('/aboutstring', function () { // if page is /aboutstring 
-    return 'about page but just a string'; // returns just the string which some how works
-});
-
-Route::get('/aboutarray', function () { // if page is /aboutstring 
-    return ['something', 'second item', 'some third item', 'this reminds me of drenthe college']; // returns just the array 
-});
+require __DIR__.'/auth.php';
