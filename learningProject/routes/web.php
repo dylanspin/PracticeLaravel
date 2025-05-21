@@ -36,6 +36,11 @@ Route::middleware(['auth'])->group(function () {
         'todo' => 'mainPages.to_do',
         'tolearn' => 'mainPages.to_learn',
         'ui' => 'mainPages.ui_ux',
+        'ai' => 'mainPages.ai',
+        'profilesettings' => 'mainPages.profile_settings',
+        'faw' => 'mainPages.faq',
+        'tickets' => 'mainPages.tickets',
+        'logbook' => 'mainPages.logbook',
     ];
 
     foreach ($pages as $url => $view) {
