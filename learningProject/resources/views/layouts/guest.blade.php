@@ -13,17 +13,28 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="antialiased d-body">
+    <body class="antialiased">
+        
+        <div class="d-sideBackgroundMap">
+            <img src="{{ asset('images/ui/DarkBackgroundMap2.png') }}" alt="" class="d-bg-image antialiased" />
+            {{-- <div class="gradient-overlay"></div> --}}
+        </div>
+        <div class="grid-overlay"></div>
+
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 ">
+           
             <div>
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current d-mainTextColor" />
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg d-secondColor d-shadow d-border">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg d-secondColor d-shadow d-border"> <!--- main background wrapper div of all auth pages  --->
                 {{ $slot }}
             </div>
         </div>
+        
+        <p class="d-parkingwareLogo">PARKINGWARE</p>
+
     </body>
 </html>

@@ -5,6 +5,7 @@
   --main-text-color: #FFFFFF;
   --second-text-color: #969696;
   --blue-text-color: #1E7EE4;
+  --logo-text-gradient: linear-gradient(to right, #555555 , #787878);
   --border-size: 1px;
   --set-shadow: drop-shadow(5px 5px 4px #000000);
 }
@@ -45,20 +46,35 @@
 }
 
 
-/* GENERAL ADDITIONS SECTION */
+/*! GENERAL ADDITIONS SECTION */
 
-.d-body
+body 
 {
-    background-color: var(--main-color);
-    /* font-family: 'Nunito Sans Variable', sans-serif; */
+    font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
+    background-color: var(--main-color);
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent any scrollbars */
+    box-sizing: border-box;
 }
 
-body {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 200;
+.d-parkingwareLogo
+{
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    text-align: right;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    background: var(--logo-text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
 
 .d-shadow
 {
@@ -68,5 +84,35 @@ body {
 .d-border
 {
     border: solid var(--border-size) var(--border-color);
+}
+
+.d-fill
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+
+/*! login page */
+
+.d-sideBackgroundMap {
+  position: absolute;
+  height: 100%;
+  width: 65%;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+}
+
+.d-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Keep aspect ratio, fill box, crop if needed */
+  object-position: right center; /* Align image to the right */
 }
 
