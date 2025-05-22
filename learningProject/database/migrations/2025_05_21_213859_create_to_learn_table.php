@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('to_learn', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('note')->nullable();
-            $table->boolean('is_done')->default(false);
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // optional if multi-user
             $table->timestamps();
+            $table->string('name', 255);
+            $table->text('description', 255);
+            $table->enum('status', ['toLearn', 'learning', 'done']);
         });
     }
 
