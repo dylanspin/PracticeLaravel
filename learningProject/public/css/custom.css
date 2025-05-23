@@ -1,22 +1,4 @@
-:root {
-  --main-color: #090909;
-  --second-color: #161616;
-  --border-color: #292929;
-  --main-text-color: #FFFFFF;
-  --second-text-color: #969696;
-  --blue-text-color: #1E7EE4;
-  --logo-text-gradient: linear-gradient(to right, #555555 , #787878);
-  --border-size: 1px;
-  --set-shadow: drop-shadow(5px 5px 4px #000000);
-}
-
-@font-face {
-  font-family: 'Nunito Sans Variable';
-  src: url('/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.woff2') format('woff2-variations');
-  font-weight: 200 900; /* Full weight range */
-  font-style: normal;
-  font-display: swap;
-}
+@import url('variables.css');
 
 /* COLOR SECTION */
 
@@ -74,6 +56,20 @@ body
     background: var(--logo-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0.5;
+    backdrop-filter: blur(4px);
+    text-shadow: 0 0 6px rgba(255,255,255,0.1);
+    
+    animation: fadeIn 1s ease-out 1 forwards, ;
+}
+
+.d-parkingwareLogo:hover {
+  opacity: 0.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
 }
 
 .d-shadow
@@ -114,5 +110,113 @@ body
   width: 100%;
   object-fit: cover; /* Keep aspect ratio, fill box, crop if needed */
   object-position: right center; /* Align image to the right */
+  pointer-events: none;
+  user-select: none;
 }
 
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1;
+
+    background-image:
+    linear-gradient(to right, #2D2D2D 1px, transparent 1px),
+    linear-gradient(to bottom, #2D2D2D 1px, transparent 1px);
+    
+    background-size: 40px 40px; /* square cells: 40px × 40px */
+    background-repeat: repeat;
+    background-position: top left;
+
+    animation: pulse 10s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+
+/*? The moving background lines*/
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1; /* above grid, below content */
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  left: -400px; /* start off-screen */
+  width: 200px;
+  height: 1px;
+  /* background: linear-gradient(to left, #EF9F27, rgba(255, 255, 255, 0)); */
+  background: linear-gradient(to left, #FFFFFF, rgba(255, 255, 255, 0));
+  opacity: 0.1;
+
+  /* animation */
+  animation: shoot 5s linear infinite;
+
+  /* glow */
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.05);
+  filter: blur(0.1px);
+}
+
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  40% { opacity: 0.7; }
+  60% { 
+    opacity: 0.7; 
+  }
+  100% {
+    transform: translateX(140vw) translateY(0);
+    opacity: 0;
+
+  }
+}
+
+.d-topSignin
+{
+
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 480px) {
+  /* Slight layout adjustments, spacing */
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+  /* 2-column layout, larger fonts, nav bar horizontal */
+}
+
+/* Large devices (laptops/desktops) */
+@media (min-width: 1024px) {
+  /* 3-column layouts, sidebar shows, more spacing */
+}
+
+/* Extra large devices */
+@media (min-width: 1280px) {
+  /* Max widths, additional whitespace, bigger containers */
+}
+
+/* Ultra large screens (4K, etc.) */
+@media (min-width: 1536px) {
+  /* Very large container sizes, hero image enhancements */
+}

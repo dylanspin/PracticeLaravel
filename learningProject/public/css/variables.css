@@ -1,0 +1,26 @@
+:root {
+  --main-color: #090909;
+  --second-color: #161616;
+  --border-color: #292929;
+  --main-text-color: #FFFFFF;
+  --second-text-color: #969696;
+  --blue-text-color: #1E7EE4;
+  --logo-text-gradient: linear-gradient(to right, #6A6A6A , #D0D0D0);
+  --border-size: 1px;
+  --set-shadow: drop-shadow(5px 5px 4px #000000);
+  --set-line-height: 1.5;
+}
+
+[data-theme="light"] {
+  --main-color: #EEF0F4;
+  --main-text-color: #393939;
+} 
+
+
+@font-face {
+  font-family: 'Nunito Sans Variable';
+  src: url('/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.woff2') format('woff2-variations');
+  font-weight: 200 900; /* Full weight range */
+  font-style: normal;
+  font-display: swap;
+}
