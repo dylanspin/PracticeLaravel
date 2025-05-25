@@ -1,0 +1,22 @@
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) and (min-height: 600px)
+{   
+    html
+    {
+        font-size: 12px !important;
+    }
+
+    .d-sideBackgroundMap {
+        width: 65% !important;
+    }
+
+    .d-login-wrapper
+    {
+        width: 45% !important;
+    }
+
+    .breakPointIndictor
+    {
+        background-color: green !important;
+    }
+}

@@ -1,39 +1,23 @@
+
 @import url('variables.css');
-
-/* COLOR SECTION */
-
-.d-mainColor
-{
-    background-color: var(--main-color);
-}
-
-.d-secondColor
-{
-    background-color: var(--second-color);
-}
-
-.d-mainTextColor
-{
-    color: var(--main-text-color);
-}
-
-.d-secondTextColor
-{
-    color: var(--main-text-color);
-}
-
-.d-blueTextColor
-{
-    color: var(--main-text-color);
-}
-
+@import url('adjustSizes.css');
+@import url('tablet.css');
+@import url('phoneLandScape');
+@import url('desktop.css');
 
 /*! GENERAL ADDITIONS SECTION */
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 200 !important;
+}
+
 body 
 {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 200;
+    transition: var(--transition-time);
     background-color: var(--main-color);
     font-weight: 200;
     margin: 0;
@@ -51,12 +35,11 @@ body
     right: 30px;
     text-align: right;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 800;
-    font-size: 15px;
+    font-size: 1rem;
     background: var(--logo-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0.5;
+    opacity: 0.6;
     backdrop-filter: blur(4px);
     text-shadow: 0 0 6px rgba(255,255,255,0.1);
     
@@ -82,6 +65,11 @@ body
     border: solid var(--border-size) var(--border-color);
 }
 
+.d-border-white
+{
+    border: solid var(--border-size) var(--main-text-color);
+}
+
 .d-fill
 {
     position: absolute;
@@ -90,31 +78,80 @@ body
     height: 100%;
 }
 
+.d-center
+{
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;  
+}
+
+.d-center-abs
+{
+  position: absolute;
+  text-align: center;
+}
+
+.d-showLight
+{
+  opacity: var(--hide-light);
+  transition: var(--transition-time);
+}
+
+.d-showDark
+{
+  opacity: var(--hide-dark);
+  transition: var(--transition-time);
+}
+
+/*! GENERAL COMPONENTS SECTION */
+
+.breakPointIndictor
+{
+    position: absolute;
+    margin: 20px;
+    right: 0px;
+    top: 0px;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 20px;
+    z-index: 100;
+}
 
 /*! login page */
 
-.d-sideBackgroundMap {
+.d-backgroundContainer
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.d-sideBackgroundMap 
+{
   position: absolute;
   height: 100%;
-  width: 65%;
+  width: 100%;
   overflow: hidden;
   right: 0px;
   top: 0px;
 }
 
-.d-bg-image {
+.d-bg-image 
+{
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   object-fit: cover; /* Keep aspect ratio, fill box, crop if needed */
-  object-position: right center; /* Align image to the right */
+  object-position: left center; /* Align image to the right */
   pointer-events: none;
   user-select: none;
 }
 
-.grid-overlay {
+.grid-overlay 
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -125,8 +162,8 @@ body
     opacity: 0.1;
 
     background-image:
-    linear-gradient(to right, #2D2D2D 1px, transparent 1px),
-    linear-gradient(to bottom, #2D2D2D 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     
     background-size: 40px 40px; /* square cells: 40px × 40px */
     background-repeat: repeat;
@@ -163,8 +200,9 @@ body
   width: 200px;
   height: 1px;
   /* background: linear-gradient(to left, #EF9F27, rgba(255, 255, 255, 0)); */
-  background: linear-gradient(to left, #FFFFFF, rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, var(--star-color), rgba(255, 255, 255, 0));
   opacity: 0.1;
+  transition: var(--transition-time);
 
   /* animation */
   animation: shoot 5s linear infinite;
@@ -173,7 +211,6 @@ body
   box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.05);
   filter: blur(0.1px);
 }
-
 
 @keyframes shoot {
   0% {
@@ -187,36 +224,106 @@ body
   100% {
     transform: translateX(140vw) translateY(0);
     opacity: 0;
-
   }
+}
+
+.d-login-wrapper
+{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 2; 
+    text-align: center;
 }
 
 .d-topSignin
 {
+    position: absolute;
+    line-height: 3rem;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.d-bottomLoginSettings
+{
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 55px;
+    left: 5%;
+    bottom: 5%;
+    
+    /* background-color: red; */
+}
+
+.d-loginDarkThemeButton
+{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+  margin-right: 25px;
+  transition: var(--transition-time);
+}
+
+.d-iconShowHover
+{
+  transform: scale(0);
+  transition: var(--transition-time);
+}
+
+
+.d-loginDarkThemeButton:hover
+{
+  transform: scale(1.1);
+  background-color: var(--main-text-color);
+    /* possibly make it fill the center and hide the border
+    and make the icon color flip too? */
+
+    /* or make it flip around and show the filled image with a sun icon showing what it could be on click? */
+}
+
+.d-loginDarkThemeButton:hover .d-iconShowHover
+{
+  transform: scale(1);
+
+  /* opacity: 1; */
+}
+
+
+
+.d-languageDropDown
+{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.d-languageDropDown:hover .dropdown-content {
+  display: block;
+}
+
+
+.d-login-form
+{
 
 }
 
-/* Small devices (landscape phones) */
-@media (min-width: 480px) {
-  /* Slight layout adjustments, spacing */
-}
 
-/* Medium devices (tablets) */
-@media (min-width: 768px) {
-  /* 2-column layout, larger fonts, nav bar horizontal */
-}
-
-/* Large devices (laptops/desktops) */
-@media (min-width: 1024px) {
-  /* 3-column layouts, sidebar shows, more spacing */
-}
-
-/* Extra large devices */
-@media (min-width: 1280px) {
-  /* Max widths, additional whitespace, bigger containers */
-}
-
-/* Ultra large screens (4K, etc.) */
-@media (min-width: 1536px) {
-  /* Very large container sizes, hero image enhancements */
-}

@@ -34,11 +34,6 @@ function createStar()
     // Align star on a random grid row
     star.style.top = `${row * cellSize}px`;
 
-    // random color offsets
-    // const hues = [0, 10, 20]; // red-orange-yellow glow variation
-    // const hue = hues[Math.floor(Math.random() * hues.length)];
-    // star.style.background = `linear-gradient(to left, hsl(${hue}, 100%, 85%), transparent)`;
-
     // random speeds
     const duration = Math.random() * (maxDuration - minDuration) + minDuration; 
     const width = Math.floor(Math.random() * 100) + 150; // 150–250px
@@ -59,7 +54,6 @@ function createStar()
     container.appendChild(star);
 
     currentSpawned += 1;
-    console.log(currentSpawned);
 }
 
 function getUniqueRow() 

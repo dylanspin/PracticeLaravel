@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 1000;
+  font-style: normal;
+}
+
 :root {
   --main-color: #090909;
   --second-color: #161616;
@@ -9,18 +16,118 @@
   --border-size: 1px;
   --set-shadow: drop-shadow(5px 5px 4px #000000);
   --set-line-height: 1.5;
+  --hide-light: 0;
+  --hide-dark: 1;
+  --transition-time: 0.3s;
+
+  --grid-color: #2D2D2D;
+  --star-color: #FFFFFF
 }
 
 [data-theme="light"] {
   --main-color: #EEF0F4;
   --main-text-color: #393939;
+  --hide-light: 1;
+  --hide-dark: 0;
+
+  --grid-color: #acacac;
+  --star-color: #000000
 } 
 
+html
+{
+  font-size: 10px;
+}
 
-@font-face {
-  font-family: 'Nunito Sans Variable';
-  src: url('/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.woff2') format('woff2-variations');
-  font-weight: 200 900; /* Full weight range */
-  font-style: normal;
-  font-display: swap;
+/* COLOR SECTION */
+
+.d-mainColor
+{
+    background-color: var(--main-color);
+}
+
+.d-secondColor
+{
+    background-color: var(--second-color);
+}
+
+.d-mainTextColor
+{
+    color: var(--main-text-color);
+}
+
+.d-secondTextColor
+{
+    color: var(--second-text-color);
+}
+
+.d-blueTextColor
+{
+    color: var(--blue-text-color);
+}
+
+/* !!! FONT SIZES */
+
+.d-s1 
+{
+  font-size: 4.5rem;  /* REM is the font size of html so 3 * 16px*/
+}
+
+.d-s2 
+{
+  font-size: 4rem; 
+}
+
+.d-s3 
+{
+  font-size: 3.5rem; 
+}
+
+.d-s4
+{
+  font-size: 3rem; 
+}
+
+.d-s5
+{
+  font-size: 2.5rem; 
+}
+
+.d-s6
+{
+  font-size: 2rem; 
+}
+
+.d-s7
+{
+  font-size: 1.5rem; 
+}
+
+.d-s8
+{
+  font-size: 1rem; 
+}
+
+
+
+/* !!! FONT WEIGHTS */
+
+.d-w1
+{
+  font-weight: 100 !important;
+}
+
+.d-w2
+{
+  font-weight: 400 !important;
+}
+
+.d-w3
+{
+  font-weight: 600 !important;
+}
+
+.d-w4
+{
+  font-weight: 800 !important;
 }

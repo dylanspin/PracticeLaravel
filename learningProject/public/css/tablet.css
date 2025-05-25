@@ -1,0 +1,23 @@
+/* Tablet (768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) 
+{
+    html
+    {
+        font-size: 16px !important;
+    }
+
+    .d-sideBackgroundMap {
+        width: 80% !important;
+    }
+
+    .d-login-wrapper
+    {
+        width: 100% !important;
+    }
+
+    .breakPointIndictor
+    {
+        background-color: blue !important;
+    }
+}
+

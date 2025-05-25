@@ -1,0 +1,33 @@
+/* 🔹 Default visibility (mobile-first approach) */
+.hide-on-mobile,
+.hide-on-tablet,
+.hide-on-pc {
+  display: none;
+}
+
+/* !!! for hiding stuff on specific break points */
+
+/* 🔸 Show on tablet and up */
+@media (min-width: 768px) {
+  .hide-on-mobile {
+    display: block !important;
+  }
+}
+
+/* 🔸 Show on tablets only (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hide-on-tablet {
+    display: block !important;
+  }
+}
+
+/* 🔸 Show on desktop only (1025px and up) */
+@media (min-width: 1025px) {
+  .hide-on-pc {
+    display: block !important;
+  }
+}
+
+/* ??? for adjusting stuff on break points */
+
+
