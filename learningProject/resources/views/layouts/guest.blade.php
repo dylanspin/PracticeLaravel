@@ -51,7 +51,7 @@
                     <img src="{{ asset('images/ui/languageIconLight.png') }}" alt="" class="d-showDark d-center-abs" />
                     <img src="{{ asset('images/ui/languageIconDark.png') }}" alt="" class="d-showLight d-center-abs" />
                     {{-- add world language icon here  --}}
-                    English
+                    English 
                     {{-- add down icon here  --}}
                     <div class="dropdown-content">
                         <p>Hello World!</p>

@@ -18,7 +18,7 @@
   --set-line-height: 1.5;
   --hide-light: 0;
   --hide-dark: 1;
-  --transition-time: 0.3s;
+  --transition-time: 0.3s ease;
 
   --grid-color: #2D2D2D;
   --star-color: #FFFFFF
@@ -29,6 +29,7 @@
   --main-text-color: #393939;
   --hide-light: 1;
   --hide-dark: 0;
+  --logo-text-gradient: linear-gradient(to right, #555555 , #787878);
 
   --grid-color: #acacac;
   --star-color: #000000
