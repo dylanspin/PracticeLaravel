@@ -90,7 +90,9 @@ body
 .d-center-abs
 {
   position: absolute;
-  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .d-showLight
@@ -251,77 +253,172 @@ body
 .d-bottomLoginSettings
 {
     position: absolute;
-    display: flex;
-    width: 50%;
+    text-align: right;
+  
+    width: 30%;
     height: 55px;
-    left: 5%;
-    bottom: 5%;
-    
-    /* background-color: red; */
+    right: 30px;
+    top: 5%;
+    z-index: 10;
 }
 
 .d-loginDarkThemeButton
 {
   position: relative;
   top: 0px;
-  left: 0px;
-  height: 50px;
-  width: 50px;
-  border-radius: 20px;
-  margin-right: 25px;
+  height: 40px;
+  width: 40px;
+  border-radius: 15px;
+  margin-left: 10px;
   transition: var(--transition-time);
+  display: inline-block;
+
+  backdrop-filter: blur(var(--back-blur-amount));
+
+  justify-content: center;
 }
 
 .d-iconShowHover
 {
-  transform: scale(0);
+  transform: translate(-50%, -50%) scale(0); 
   transition: var(--transition-time);
 }
-
 
 .d-loginDarkThemeButton:hover
 {
   transform: scale(1.1);
   background-color: var(--main-text-color);
-    /* possibly make it fill the center and hide the border
-    and make the icon color flip too? */
-
-    /* or make it flip around and show the filled image with a sun icon showing what it could be on click? */
 }
 
 .d-loginDarkThemeButton:hover .d-iconShowHover
 {
   transform: scale(1);
-
-  /* opacity: 1; */
+  transform: translate(-50%, -50%) scale(1);
 }
 
+.d-loginIcon
+{
+  position: absolute;
+  height: 25px;
+  width: 25px;
+}
 
+.d-languageIcon
+{
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+
+.d-currentLanguage
+{
+    position: absolute;
+    left: 50px;
+    font-weight: 100;
+    transition: var(--transition-time);
+}
+
+.d-upDownIcon
+{
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    transform: rotate(180deg);
+    right: 15px;
+    top:16px;
+}
 
 .d-languageDropDown
 {
-  position: relative;
+  position: absolute;
+  display: inline-block;
   top: 0px;
-  left: 0px;
-  height: 50px;
-  width: 200px;
-  border-radius: 20px;
+  right: 50px;
+  min-height: 40px;
+  max-height: fit-content;
+  width: 175px;
+  border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(var(--back-blur-amount));
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  position: relative;
+  top: 40px;
+  left: 0px;
+  max-height: 0px;
+  width: 100%;
+  transition: var(--transition-time);
+  overflow: hidden;
+  padding-top: 5px;
 }
 
 .d-languageDropDown:hover .dropdown-content {
-  display: block;
+    max-height: 500px; 
 }
 
+.d-languageDropDown:hover .d-upDownIcon
+{
+    transform: rotate(0deg);
+    transform: scale(1.1)
+}
+
+.d-languageDropDown:hover .d-currentLanguage
+{
+
+}
+
+.d-languageListing
+{
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    text-align: left;
+    transition: var(--transition-time);
+}
+
+.languageDot
+{
+    position: absolute;
+    transform: rotate(45deg);
+    border: solid var(--border-size) var(--second-text-color);
+    width: 10px;
+    height: 10px;
+    left: 16px;
+    top: 11px;
+    border-radius: 2px;
+    transition: var(--transition-time);
+}
+
+.languageText
+{
+    position: relative;
+    left: 50px;
+    top: 3px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--second-text-color);
+    cursor: pointer; 
+    transition: var(--transition-time);
+}
+
+.d-languageListing:hover
+{
+    backdrop-filter: blur(20px);
+}
+
+.d-languageListing:hover .languageText
+{
+    color: var(--main-text-color);
+    font-weight: 500;
+}
+
+.d-languageListing:hover .languageDot
+{
+    border: solid var(--border-size) var(--main-text-color);
+}
 
 .d-login-form
 {

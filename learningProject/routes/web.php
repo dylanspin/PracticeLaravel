@@ -64,4 +64,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/language/{lang}', [App\Http\Controllers\LanguageController::class, 'switch'])->name('language.switch');
+
 require __DIR__.'/auth.php';

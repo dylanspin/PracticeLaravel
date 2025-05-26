@@ -14,6 +14,8 @@
   --blue-text-color: #1E7EE4;
   --logo-text-gradient: linear-gradient(to right, #6A6A6A , #D0D0D0);
   --border-size: 1px;
+  --border-size-hover: 2px;
+  --back-blur-amount: 10px;
   --set-shadow: drop-shadow(5px 5px 4px #000000);
   --set-line-height: 1.5;
   --hide-light: 0;
@@ -26,7 +28,8 @@
 
 [data-theme="light"] {
   --main-color: #EEF0F4;
-  --main-text-color: #393939;
+  --main-text-color: #090909;
+  --second-text-color: #474747;
   --hide-light: 1;
   --hide-dark: 0;
   --logo-text-gradient: linear-gradient(to right, #555555 , #787878);
@@ -108,8 +111,6 @@ html
 {
   font-size: 1rem; 
 }
-
-
 
 /* !!! FONT WEIGHTS */
 

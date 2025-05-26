@@ -32,34 +32,109 @@
 
         <div class="d-login-wrapper">
             <div class="d-topSignin">
-                <span class="d-s7"><span  class="d-secondTextColor d-w1">Sign into</span > <span class="d-mainTextColor">Henschotermeer</span></span>
+                <span class="d-s7"><span  class="d-secondTextColor d-w1">@lang('general.sign_in')</span > <span class="d-mainTextColor">Henschotermeer</span></span>
                 <h1 class="d-mainTextColor d-s3 d-w4">Parking Shop</h1>
             </div>
             
             {{ $slot }}
+        </div>
 
-            <div class="d-bottomLoginSettings"> <!--- bottom left language/dark theme switcher --->
-                <button class="d-loginDarkThemeButton d-border-white d-s6 d-mainTextColor d-center" onclick="toggleTheme()">
-                    <img src="{{ asset('images/ui/moonWhite.png') }}" alt="" class="d-showDark d-center-abs" />
-                    <img src="{{ asset('images/ui/Sun-black.png') }}" alt="" class="d-showLight d-center-abs" />
-                    
-                    {{-- hover version icons --}}
-                    <img src="{{ asset('images/ui/moonDark.png') }}" alt="" class="d-showDark d-center-abs d-iconShowHover" />
-                    <img src="{{ asset('images/ui/Sun-light.png') }}" alt="" class="d-showLight d-center-abs d-iconShowHover" />
-                </button>
-                <div class="d-languageDropDown d-border-white d-s6 d-mainTextColor d-center">
-                    <img src="{{ asset('images/ui/languageIconLight.png') }}" alt="" class="d-showDark d-center-abs" />
-                    <img src="{{ asset('images/ui/languageIconDark.png') }}" alt="" class="d-showLight d-center-abs" />
-                    {{-- add world language icon here  --}}
-                    English 
-                    {{-- add down icon here  --}}
-                    <div class="dropdown-content">
-                        <p>Hello World!</p>
+        <div class="d-bottomLoginSettings"> <!--- bottom left language/dark theme switcher --->
+            <div class="d-languageDropDown d-border-white d-s6 d-mainTextColor">
+                <img src="{{ asset('images/ui/languageIconLight.png') }}" alt="" class="d-showDark d-loginIcon d-languageIcon"/>
+                <img src="{{ asset('images/ui/languageIconDark.png') }}" alt="" class="d-showLight d-loginIcon d-languageIcon"/>
+
+                <div class="d-currentLanguage">@lang('general.this_language')</div>
+
+                <img src="{{ asset('images/ui/UpDownIconDark.png') }}" alt="" class="d-showLight d-upDownIcon"/>
+                <img src="{{ asset('images/ui/UpDownIcon.png') }}" alt="" class="d-showDark d-upDownIcon"/>
+
+                <div class="dropdown-content">
+
+                    @foreach ($languages as $code => $name)
+                        <div class="d-languageListing" onclick="window.location.href='{{ route('language.switch', ['lang' => $code]) }}'">
+                            <div class="languageDot"></div>
+                            <div class="languageText">{{ $name }}</div>
+                        </div>
+                    @endforeach
+
+
+                    {{-- <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">English</div>    
                     </div>
-                </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Nederlands</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Deutsch</div>    
+                    </div>
                     
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Espanol</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Française</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Portuguese</div>
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Italiano</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">עברית</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">عربي</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Svenska</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Norsk</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">Dansk</div>    
+                    </div>
+
+                    <div class="d-languageListing" onclick="switchLanguage(0)">
+                        <div class="languageDot"> </div>    
+                        <div class="languageText">ελληνικά</div>    
+                    </div> --}}
+
+                </div>
             </div>
 
+            <button class="d-loginDarkThemeButton d-border-white d-s6 d-mainTextColor" onclick="toggleTheme()">
+                <img src="{{ asset('images/ui/moonWhite.png') }}" alt="" class="d-showDark d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/Sun-black.png') }}" alt="" class="d-showLight d-center-abs d-loginIcon" />
+                
+                <img src="{{ asset('images/ui/moonDark.png') }}" alt="" class="d-showDark d-iconShowHover d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/Sun-light.png') }}" alt="" class="d-showLight d-iconShowHover d-center-abs d-loginIcon" />
+            </button>
+          
         </div>
         
         <p class="d-parkingwareLogo">PARKINGWARE</p>
