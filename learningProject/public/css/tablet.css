@@ -19,5 +19,17 @@
     {
         background-color: blue !important;
     }
+    
+    .d-currentLanguage
+    {
+        left: 50px;
+        font-size: 1.5rem !important;
+        top: 0px !important;
+    }
+
+    .languageDot
+    {
+        top: 18px !important;
+    }
 }
 

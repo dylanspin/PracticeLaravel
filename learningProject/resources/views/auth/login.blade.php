@@ -1,27 +1,44 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    {{-- <form method="POST" action="{{ route('login') }}">
+    
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    
+    <form method="POST" action="{{ route('login') }}" class="d-login-form">
         @csrf
 
         <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+        <div class="d-inputSpacing">
+            <x-input-label for="email" :value="__('Email')"/>
+            
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+            <div class="d-inputWrapper">
+                <input type="email" id="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Your email" class="d-loginInput {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
+                
+                <div class="hideOnInput">
+                    <img src="{{ asset('images/ui/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
+                    <img src="{{ asset('images/ui/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                </div>
+            </div>
+            
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
+        <div class="d-inputSpacing">
             <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
+            
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+            <div class="d-inputWrapper">
+                <input type="password" name="password" required autocomplete="current-password" placeholder="Your password" class="d-loginInput {{ $errors->has('password') ? 'd-errorInput' : '' }}"> 
+                
+                <div class="hideOnInput">
+                    <img src="{{ asset('images/ui/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
+                    <img src="{{ asset('images/ui/PasswordIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                </div>
+            </div>
+
         </div>
 
         <!-- Remember Me -->
@@ -43,5 +60,5 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
-    </form> --}}
+    </form>
 </x-guest-layout>

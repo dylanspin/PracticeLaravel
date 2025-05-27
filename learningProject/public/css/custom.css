@@ -242,9 +242,9 @@ body
 
 .d-topSignin
 {
-    position: absolute;
+    position: relative;
     line-height: 3rem;
-    top: 10%;
+    top: 100px;
     width: 100%;
     text-align: center;
     line-height: 3rem;
@@ -257,8 +257,8 @@ body
   
     width: 30%;
     height: 55px;
-    right: 30px;
-    top: 5%;
+    right: 20px;
+    top: 2%;
     z-index: 10;
 }
 
@@ -314,7 +314,9 @@ body
 {
     position: absolute;
     left: 50px;
+    top: 4px;
     font-weight: 100;
+    font-size: 2rem;
     transition: var(--transition-time);
 }
 
@@ -336,7 +338,7 @@ body
   right: 50px;
   min-height: 40px;
   max-height: fit-content;
-  width: 175px;
+  width: 225px;
   border-radius: 15px;
   overflow: hidden;
   backdrop-filter: blur(var(--back-blur-amount));
@@ -392,6 +394,45 @@ body
     transition: var(--transition-time);
 }
 
+.languageDotSelected
+{
+    background-color: var(--main-text-color);
+    border: solid var(--border-size) var(--main-text-color);
+
+    animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0% {
+      transform: scale(1) rotate(45deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(50deg);
+    }
+    100% {
+      transform: scale(1) rotate(45deg);
+    }
+}
+
+.languageTextSelected
+{
+    color: var(--main-text-color) !important;
+    font-weight: 900 !important;
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+   0% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+    50% {
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+}
+
 .languageText
 {
     position: relative;
@@ -420,9 +461,100 @@ body
     border: solid var(--border-size) var(--main-text-color);
 }
 
+
+/* ?? login form stuff */
+
 .d-login-form
 {
-
+    position: relative;
+    top: 175px;
+    left: 20%;
+    width: 60%;
+    text-align: left;
+    /* transform: translate(-50%, -50%); */
 }
+
+.d-inputSpacing
+{
+   margin-bottom: 35px;
+}
+
+.d-inputLabel
+{
+    position: relative;
+    text-align: left;
+    left: 0px;
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+input::placeholder {
+  color: var(--placeholder-text-color);
+  padding-left: 50px;  
+}
+
+.d-inputWrapper
+{
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.d-loginInput
+{
+    position: relative;
+    width: 100% !important;
+    height: 50px;
+    border-radius: 10px !important;
+    background-color: var(--input-background) !important;
+    border: solid var(--border-size) var(--border-color) !important;
+    font-size: 1.5rem;
+    color: var(--input-text-color);
+
+    filter: var(--shadow);
+    transition: var(--transition-time);
+}
+
+.d-loginInput:hover
+{
+    border: solid var(--border-size) var(--input-text-color) !important;
+}
+
+.d-errorInput
+{
+    border: solid var(--border-size) var(--error-color) !important;
+}
+
+.d-inputIcon
+{
+  position: absolute;
+  height: 20;
+  width: auto;
+
+  pointer-events: none;
+  transition: 0s;
+}
+
+.hideOnInput
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+
+    transform: scale(1);
+
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.d-inputWrapper input:not(:placeholder-shown) + .hideOnInput {
+  transform: scale(0);
+}
+
 
 

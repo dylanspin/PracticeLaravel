@@ -4,4 +4,14 @@
     {
         background-color: purple !important;
     }
+
+
+    .dropdown-content
+    {
+        overflow: auto !important;
+    }
+
+    .d-languageDropDown:hover .dropdown-content {
+        max-height: 300px !important; 
+    }
 }

@@ -19,4 +19,25 @@
     {
         background-color: green !important;
     }
+
+    .d-bottomLoginSettings
+    {
+        width: 30%;
+        height: 55px;
+        right: 30px !important;
+        top: 5% !important;
+    }
+
+    .d-currentLanguage
+    {
+        left: 50px;
+        top: 0px !important;
+        font-weight: 100;
+        font-size: 1.5rem;
+    }
+
+    .languageDot
+    {
+        top: 12px !important;
+    }
 }

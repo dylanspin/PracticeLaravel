@@ -5,5 +5,7 @@
         @foreach ((array) $messages as $message)
             <li>{{ $message }}</li>
         @endforeach
+
+        <img src="{{ asset('images/ui/ErrorCross.png') }}" alt="" class="d-inputIcon"/>
     </ul>
 @endif
