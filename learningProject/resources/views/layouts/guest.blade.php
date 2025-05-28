@@ -14,7 +14,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="">
-        
+
+        {{-- ! TRANSITION SECTION --}}
+        <div id="page-transition"></div>
+
         {{-- ! BACKGROUND SECTION --}}
         <div class="d-backgroundContainer">
             <div class="d-sideBackgroundMap">
@@ -22,6 +25,7 @@
                 <img src="{{ asset('images/ui/LightBackgroundMap.png') }}" alt="" class="d-bg-image d-showLight" />
             </div>
 
+            <div class="grid-back "></div>
             <div class="grid-overlay"></div>
             <div class="shooting-stars" id="shooting-stars"></div>
         </div>
@@ -74,14 +78,13 @@
                    
                 </div>
             </div>
-
-            
-          
         </div>
         
         <p class="d-parkingwareLogo">PARKINGWARE</p>
-
+        
+        <script src="{{ asset('js/intro.js') }}"></script>
         <script src="{{ asset('js/stars.js') }}"></script>
-        <script src="{{ asset('js/test.js') }}"></script>
+        <script src="{{ asset('js/theme.js') }}"></script>
+        <script src="{{ asset('js/gridEffect.js') }}"></script>
     </body>
 </html>

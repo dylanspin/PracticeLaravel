@@ -31,34 +31,50 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <div class="d-inputWrapper">
-                <input type="password" name="password" required autocomplete="current-password" placeholder="Your password" class="d-loginInput {{ $errors->has('password') ? 'd-errorInput' : '' }}"> 
+                <input type="password" name="password" required autocomplete="current-password" placeholder="Your password" id="passwordInput" class="d-loginInput d-passwordInput {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
-                    <img src="{{ asset('images/ui/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
-                    <img src="{{ asset('images/ui/PasswordIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                    <img src="{{ asset('images/ui/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
+                    <img src="{{ asset('images/ui/PasswordIconLight.png') }}" alt="" class="d-showLight d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
                 </div>
+
+                <button id="togglePassword" class="d-passwordButton">
+                    <img src="{{ asset('images/ui/showPassDark.png') }}" alt="" id="eyeIcon" class="d-showDark d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/showPassLight.png') }}" alt="" id="eyeIcon2" class="d-showLight d-center-abs d-showPassIcon"/>
+
+                    <img src="{{ asset('images/ui/hidePassDark.png') }}" alt="" id="eyeIconClosed" class="d-showDark d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/hidePassLight.png') }}" alt="" id="eyeIconClosed2" class="d-showLight d-center-abs d-showPassIcon"/>
+                </button>
             </div>
 
         </div>
 
         <!-- Remember Me -->
         <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+            <label class="custom-checkbox">
+                <input id="remember_me" type="checkbox" name="remember"/>
+                <span class="checkmark">
+                    <img src="{{ asset('images/ui/checkIconDark.png') }}" alt="" class="tick-icon d-showDark d-center-abs" />
+                    <img src="{{ asset('images/ui/checkIcon.png') }}" alt="" class="tick-icon d-showLight d-center-abs" />
+                </span>
+                <span class="d-rememberText">@lang('general.remember_me')</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="d-center d-inputSpacingTop d-inputSpacing">
+        <x-primary-button class="d-loginButton ">
+            @lang('general.sign')
+        </x-primary-button>
+        </div>
+
+        <div class="block mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    @lang('general.forgot_pass')
                 </a>
             @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
         </div>
     </form>
+
+        <script src="{{ asset('js/showHidePass.js') }}"></script>
 </x-guest-layout>

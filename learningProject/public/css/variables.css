@@ -26,8 +26,10 @@
   --hide-light: 0;
   --hide-dark: 1;
   --transition-time: 0.3s ease;
+  --radius-amount: 10px;
 
   --grid-color: #2D2D2D;
+  --grid-color-hover: rgba(255, 255, 255, 0.1);
   --star-color: #FFFFFF
 }
 
@@ -42,7 +44,8 @@
   --hide-dark: 0;
   --logo-text-gradient: linear-gradient(to right, #555555 , #787878);
 
-  --grid-color: #acacac;
+  --grid-color: #727272;
+  --grid-color-hover: rgba(0, 0, 0, 0.15);
   --star-color: #000000
 } 
 

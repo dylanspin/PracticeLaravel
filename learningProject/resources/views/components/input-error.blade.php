@@ -1,11 +1,15 @@
 @props(['messages'])
 
 @if ($messages)
-    <ul {{ $attributes->merge(['class' => 'text-sm text-red-600 dark:text-red-400 space-y-1']) }}>
-        @foreach ((array) $messages as $message)
-            <li>{{ $message }}</li>
-        @endforeach
-
-        <img src="{{ asset('images/ui/ErrorCross.png') }}" alt="" class="d-inputIcon"/>
-    </ul>
+    <div {{ $attributes->merge(['class' => 'd-errorMessage']) }}>
+        <img src="{{ asset('images/ui/ErrorCross.png') }}" alt="" class="d-errorIcon"/>
+        
+        <div class="d-errorText">
+            <ul>
+                @foreach ((array) $messages as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
 @endif
