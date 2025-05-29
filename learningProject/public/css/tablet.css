@@ -31,5 +31,27 @@
     {
         top: 18px !important;
     }
+
+    .d-greetingContainer 
+    {
+        display: none !important;
+    }
+
+    .d-bottomLoginSettings
+    {
+        width: 30% !important;
+    }
+
+    .d-login-form
+    {
+        left: 20% !important;
+        width: 60% !important;
+        top: 300px !important;
+    }
+
+    .d-topSignin
+    {
+        top: 200px !important;
+    }
 }
 

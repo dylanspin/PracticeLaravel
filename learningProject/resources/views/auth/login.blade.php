@@ -9,12 +9,12 @@
 
         <!-- Email Address -->
         <div class="d-inputSpacing">
-            <x-input-label for="email" :value="__('Email')"/>
+            <x-input-label for="email" :value="__('general.email')"/>
             
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
             <div class="d-inputWrapper">
-                <input type="email" id="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Your email" class="d-loginInput {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
+                <input type="email" id="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="@lang('general.your_email')" class="d-loginInput d-generalStyle {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
                     <img src="{{ asset('images/ui/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
@@ -26,12 +26,12 @@
 
         <!-- Password -->
         <div class="d-inputSpacing">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('general.pass')" />
             
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <div class="d-inputWrapper">
-                <input type="password" name="password" required autocomplete="current-password" placeholder="Your password" id="passwordInput" class="d-loginInput d-passwordInput {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
+                <input type="password" name="password" required autocomplete="current-password" placeholder="@lang('general.your_pass')" id="passwordInput" class="d-loginInput d-passwordInput d-generalStyle {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
                     <img src="{{ asset('images/ui/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
@@ -62,14 +62,16 @@
         </div>
 
         <div class="d-center d-inputSpacingTop d-inputSpacing">
-        <x-primary-button class="d-loginButton ">
-            @lang('general.sign')
-        </x-primary-button>
+            <x-primary-button class="d-loginButton">
+                <div class="d-loginButtonBackground"></div>
+                <img src="{{ asset('images/ui/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
+                <div class="d-center-abs d-loginText">@lang('general.sign')</div>
+            </x-primary-button>
         </div>
 
-        <div class="block mt-4">
+        <div class="block mt-4 d-center d-inputSpacingTop">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                <a class="d-loginLink {{ $errors->has('email') ? 'd-error-text' : '' }}" href="{{ route('password.request') }}">
                     @lang('general.forgot_pass')
                 </a>
             @endif

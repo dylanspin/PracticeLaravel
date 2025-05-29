@@ -1,0 +1,47 @@
+/* Landscape phone protection */
+@media (min-width: 768px) and (max-height: 500px) {
+    .breakPointIndictor
+    {
+        background-color: purple !important;
+    }
+
+    .dropdown-content
+    {
+        overflow: auto !important;
+    }
+
+    .d-languageDropDown:hover .dropdown-content {
+        max-height: 300px !important; 
+    }
+
+    .d-sideBackgroundMap {
+        width: 80% !important;
+    }
+
+    .d-login-wrapper
+    {
+        width: 100% !important;
+    }
+
+    .d-greetingContainer 
+    {
+        display: none !important;
+    }
+
+    .d-bottomLoginSettings
+    {
+        width: 30% !important;
+    }
+
+    .d-login-form
+    {
+        left: 20% !important;
+        width: 60% !important;
+        top: 300px !important;
+    }
+
+    .d-topSignin
+    {
+        top: 200px !important;
+    }
+}

@@ -12,6 +12,24 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        
+        <script>
+            const GREETINGS = {
+                morning: "@lang('greeting.greeting_morning')",
+                afternoon: "@lang('greeting.greeting_afternoon')",
+                evening: "@lang('greeting.greeting_evening')",
+                night: "@lang('greeting.greeting_night')",
+                welcomeBack: "@lang('greeting.welcome_back')",
+                tagline: "@lang('greeting.motivational_tagline')",
+
+                noProblem: "@lang('greeting.no_problem')",
+                passwordBack: "@lang('greeting.password_back')"
+            };
+
+
+        </script>
+
     </head>
     <body class="">
 
@@ -30,8 +48,17 @@
             <div class="shooting-stars" id="shooting-stars"></div>
         </div>
 
-        <div class="breakPointIndictor"></div> <!--- Break point indicator for working on responsive design --->
+        <div class="breakPointIndictor "></div> <!--- Break point indicator for working on responsive design --->
         
+        <div class="d-greetingContainer "> <!--- Right side welcome text ---->
+            <div class="d-greeting">
+                <span class="d-w2" id="greeting-p1">Good evening,</span><span id="greeting-p2"> welcome back. <br>
+                Let's get started.</span>
+            </div>
+        </div>
+
+        {{-- Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one. --}}
+
         {{-- <button onclick="toggleTheme()">switch theme</button> --}}
 
         <div class="d-login-wrapper">
@@ -43,7 +70,7 @@
             {{ $slot }}
         </div>
 
-        <div class="d-bottomLoginSettings"> <!--- bottom left language/dark theme switcher --->
+        <div class="d-bottomLoginSettings"> <!--- top right language/dark theme switcher --->
             
             <button class="d-loginDarkThemeButton d-border-white d-s6 d-mainTextColor" onclick="toggleTheme()">
                 <img src="{{ asset('images/ui/moonWhite.png') }}" alt="" class="d-showDark d-center-abs d-loginIcon" />
@@ -79,6 +106,8 @@
                 </div>
             </div>
         </div>
+
+     
         
         <p class="d-parkingwareLogo">PARKINGWARE</p>
         
@@ -86,5 +115,6 @@
         <script src="{{ asset('js/stars.js') }}"></script>
         <script src="{{ asset('js/theme.js') }}"></script>
         <script src="{{ asset('js/gridEffect.js') }}"></script>
+        <script src="{{ asset('js/greeting.js') }}"></script>
     </body>
 </html>

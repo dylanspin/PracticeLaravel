@@ -3,7 +3,7 @@
 @import url('animations.css');
 @import url('adjustSizes.css');
 @import url('tablet.css');
-@import url('phoneLandScape');
+@import url('phoneLandScape.css');
 @import url('desktop.css');
 
 /*! GENERAL ADDITIONS SECTION */
@@ -112,6 +112,24 @@ body
 {
   opacity: var(--hide-dark);
   transition: var(--transition-time);
+}
+
+.d-generalStyle
+{
+    filter: var(--set-shadow);
+    border: solid var(--border-size) var(--second-text-color);
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+    border-radius: var(--radius-amount);
+}
+
+.d-generalStyle:hover
+{
+    border: solid var(--border-size) var(--input-text-color) !important;
+}
+
+.d-generalStyle:active {
+  transform: scale(0.98);
 }
 
 /*! GENERAL COMPONENTS SECTION */
@@ -283,7 +301,7 @@ body
 {
     position: relative;
     line-height: 3rem;
-    top: 100px;
+    top: 15vh;
     width: 100%;
     text-align: center;
     line-height: 3rem;
@@ -506,21 +524,21 @@ body
 .d-login-form
 {
     position: relative;
-    top: 175px;
-    left: 20%;
-    width: 60%;
+    top: 23vh;
+    left: 15%;
+    width: 75%;
     text-align: left;
     /* transform: translate(-50%, -50%); */
 }
 
 .d-inputSpacing
 {
-   margin-bottom: 35px;
+   margin-bottom: 4vh;
 }
 
 .d-inputSpacingTop
 {
-   margin-top: 50px;
+   margin-top: 5vh;
 }
 
 
@@ -607,6 +625,12 @@ input:active {
 {
     border: solid var(--border-size) var(--error-color) !important;
 }
+
+.d-error-text
+{
+   color: var(--error-color) !important;
+}
+
 
 .d-inputIcon
 {
@@ -752,25 +776,130 @@ input:active {
 .d-loginButton
 {
   position: relative;
-  width: 380px;
-  height: 71px;
+  width: 300px;
+  height: 60px;
 
-  border-radius: 20px;
   font-size: 2rem;
-
-  background-color: var(--input-background);
   color: var(--input-text-color);
-  border: solid var(--border-size) var(--border-color);
-  filter: var(--set-shadow);
+  transition: var(--transition-time);
 
   cursor: pointer;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.d-loginButtonBackground
+{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+    transform: skew(20deg);
+
+    border: solid var(--border-size) var(--border-color);
+    background-color: var(--input-background);
+    filter: var(--set-shadow);
+    border-radius: var(--radius-amount);
+
+    transition: var(--transition-time);
+}
+
+.d-loginText
+{
+  white-space: nowrap;
 }
 
 .d-loginButton:active {
   transform: scale(0.98);
 }
 
-.d-loginButton:hover
+.d-loginButton:hover .d-loginButtonBackground
 {
-    border: solid var(--border-size) var(--input-text-color) !important;
+    border: solid var(--border-size) var(--input-text-color);
+    transform: skew(15deg);
+}
+
+.d-loginButton:hover 
+{
+   font-size: 2.1rem;
+}
+
+.d-loginButton:hover .d-loginButtonIcon
+{
+  transform: scale(1.05) translateX(5px);
+}
+
+.d-loginButtonIcon
+{
+  position: absolute;
+  height: 25px;
+  width: auto;
+  left: 40px;
+
+  transition: var(--transition-time);
+}
+
+.d-loginLink
+{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--second-text-color);
+    text-decoration: underline;
+    text-align: center;
+
+    width: 100%;
+    transition: var(--transition-time);
+}
+
+.d-loginLink:hover
+{
+    font-weight: 300;
+    color: var(--main-text-color);
+}
+
+.d-greetingContainer 
+{
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+    font-size: 3rem;
+    font-weight: 100;
+    color: var(--main-text-color);
+    
+    display: none;
+    justify-content: center;  /* center horizontally */
+    align-items: center;  
+}
+
+.d-greeting
+{
+    padding-bottom: 50px;
+    text-shadow: var(--text-shadow);
+    overflow: hidden;
+}
+
+.d-statusMessage
+{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 10vh;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--positive-color);
+    animation: fadeIn 1s ease-out;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -15,6 +15,7 @@
   --second-text-color: #969696;
   --blue-text-color: #1E7EE4;
   --error-color: #E21521;
+  --positive-color: #28CF4D;
   --placeholder-text-color: #6A6A6A;
   --input-text-color: #FFFFFF;
   --logo-text-gradient: linear-gradient(to right, #6A6A6A , #D0D0D0);
@@ -22,6 +23,7 @@
   --border-size-hover: 2px;
   --back-blur-amount: 10px;
   --set-shadow: drop-shadow(5px 5px 4px #000000);
+  --text-shadow: 5px 5px 4px #000000;
   --set-line-height: 1.5;
   --hide-light: 0;
   --hide-dark: 1;
@@ -143,4 +145,9 @@ html
 .d-w4
 {
   font-weight: 800 !important;
+}
+
+.d-inline-block
+{
+  display: inline-block
 }

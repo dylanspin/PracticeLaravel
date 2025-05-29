@@ -40,4 +40,22 @@
     {
         top: 12px !important;
     }
+
+    .d-greetingContainer 
+    {
+        display: flex !important;
+    }
+
+    .d-login-form
+    {
+        left: 20% !important;
+        width: 60% !important;
+        top: 200px !important;
+    }
+
+    .d-topSignin
+    {
+        top: 150px !important;
+    }
+
 }

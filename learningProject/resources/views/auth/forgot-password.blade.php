@@ -1,25 +1,44 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+   
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
+    <form method="POST" action="{{ route('password.email') }}" class="d-login-form">
         @csrf
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <x-input-label for="email" :value="__('general.email')" />
+
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+            <div class="d-inputWrapper">
+                <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="@lang('general.your_email')" class="d-loginInput d-generalStyle  {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
+                
+                <div class="hideOnInput">
+                    <img src="{{ asset('images/ui/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
+                    <img src="{{ asset('images/ui/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                </div>
+            </div>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
+        <div class="d-center d-inputSpacingTop d-inputSpacing">
+
+             <x-primary-button class="d-loginButton">
+                <div class="d-loginButtonBackground"></div>
+                <img src="{{ asset('images/ui/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
+                <div class="d-center-abs d-loginText">@lang('general.send_reset')</div>
             </x-primary-button>
         </div>
+
+        <div class="block mt-4 d-center d-inputSpacingTop">
+            @if (Route::has('password.request'))
+                <a class="d-loginLink" href="/login">
+                    @lang('general.back')
+                </a>
+            @endif
+        </div>
     </form>
+
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 </x-guest-layout>
