@@ -7,12 +7,14 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        {{-- Favicon --}}
+        <link rel="icon" href="{{ asset('favicon.ico') }}?v=1" type="image/ico">
+
         {{-- css sheet --}}
-        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/auth/custom.css') }}">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         
         <script>
             const GREETINGS = {
@@ -26,8 +28,6 @@
                 noProblem: "@lang('greeting.no_problem')",
                 passwordBack: "@lang('greeting.password_back')"
             };
-
-
         </script>
 
     </head>
@@ -48,7 +48,7 @@
             <div class="shooting-stars" id="shooting-stars"></div>
         </div>
 
-        <div class="breakPointIndictor "></div> <!--- Break point indicator for working on responsive design --->
+        {{-- <div class="breakPointIndictor "></div> <!--- Break point indicator for working on responsive design ---> --}}
         
         <div class="d-greetingContainer "> <!--- Right side welcome text ---->
             <div class="d-greeting">
@@ -56,10 +56,6 @@
                 Let's get started.</span>
             </div>
         </div>
-
-        {{-- Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one. --}}
-
-        {{-- <button onclick="toggleTheme()">switch theme</button> --}}
 
         <div class="d-login-wrapper">
             <div class="d-topSignin">
@@ -69,6 +65,8 @@
             
             {{ $slot }}
         </div>
+
+        <pre>{{ var_dump($languages) }}</pre>
 
         <div class="d-bottomLoginSettings"> <!--- top right language/dark theme switcher --->
             
@@ -89,7 +87,7 @@
                 <img src="{{ asset('images/ui/UpDownIconDark.png') }}" alt="" class="d-showLight d-upDownIcon"/>
                 <img src="{{ asset('images/ui/UpDownIcon.png') }}" alt="" class="d-showDark d-upDownIcon"/>
 
-                <div class="dropdown-content">
+                <div class="dropdown-content custom-scroll">
                     
                     {{-- gets the current language so the language in the list can be shown as selected --}}
                     @php
@@ -106,8 +104,6 @@
                 </div>
             </div>
         </div>
-
-     
         
         <p class="d-parkingwareLogo">PARKINGWARE</p>
         

@@ -1,0 +1,181 @@
+@import url('../variables.css');
+@import url('../animations.css');
+@import url('tablet.css');
+@import url('phoneLandScape.css');
+@import url('desktop.css');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 200 !important;
+}
+
+body 
+{
+    transition: var(--transition-time);
+    background-color: var(--main-color);
+    color: var(--main-text-color);
+    font-size: 1rem;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+
+.breakPointIndictor
+{
+    position: absolute;
+    margin: 20px;
+    right: 0px;
+    top: 0px;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 20px;
+    z-index: 100;
+}
+
+.d-flexContainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ! --------------- top nav section --------------- */
+
+.d-topNav
+{   
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    width: 100vw;
+    height: 6vh;
+
+    margin-bottom: 2vh;
+
+    background-color: var(--complete-dark-color);
+}
+
+.d-navleftSection
+{
+    position: relative;
+    width: 25vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap:nowrap;
+    justify-content: start;
+}
+
+.d-navLogoImg
+{
+    position: relative;
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    left: 1vw;
+    margin-right: 1vw;
+
+    z-index: 1;
+}
+
+.d-headerText
+{
+    display: flex;
+    align-items: baseline;
+
+    z-index: 1;
+}
+
+.d-imgFull
+{
+    position: absolute;
+    height: 100%;
+    width: auto;
+}
+
+.d-headerTitle
+{
+    position: relative;
+    color: var(--main-text-color);
+    font-weight: 100;
+    font-size: 2em;
+    text-align: left;
+    vertical-align: auto;
+    margin-right: 1vw;
+}
+
+.d-headerVersion
+{
+    color: var(--second-text-color);
+}
+
+.d-headerBackground
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    z-index: 0;
+}
+
+.d-headerleftBackground
+{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    top: 0px;
+    background-color: var(--complete-dark-color);
+}   
+
+.d-headerGradient
+{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    top: 0px;
+    /* background-color: blue; */
+    /* margin-left: auto; */
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    mask-image: linear-gradient(to right, var(--complete-dark-color) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, var(--complete-dark-color) 0%, transparent 100%);
+    pointer-events: none;
+
+}
+
+/* ! --------------- side nav section --------------- */
+
+.d-sideNav
+{
+    height: auto;
+    width: 3rem;
+    background-color: red;
+}
+
+/* ! --------------- footer section --------------- */
+
+.d-footer
+{
+    position: relative;
+
+    margin-top: 200px;
+    height: 300px;
+    width: 100wv;
+
+    background-color: var(--complete-dark-color);
+}

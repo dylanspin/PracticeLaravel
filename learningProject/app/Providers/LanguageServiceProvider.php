@@ -35,6 +35,7 @@ class LanguageServiceProvider extends ServiceProvider
             'no' => 'Norsk',
             'da' => 'Dansk',
             'el' => 'ελληνικά',
+            'ja' => '日本語',
         ];
 
         // Share with all views

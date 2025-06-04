@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/custom.css') }}">
     
     <form method="POST" action="{{ route('login') }}" class="d-login-form">
         @csrf

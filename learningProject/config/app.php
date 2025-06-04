@@ -17,6 +17,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    |
+    | The current version of the dashboard should be updated MANUALLY on new update
+    | This can be used to determen if customer has older version or not if they have an bug 
+    | Can also be used for showing if the dashboard got a new update with change logs
+    |
+    */
+
+    'version' => env('APP_VERSION', '1.0.0'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |

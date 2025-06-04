@@ -1,0 +1,40 @@
+@import url('../variables.css');
+@import url('../animations.css');
+
+
+
+/* Testing flex boxes */
+
+.testingContainer
+{
+    height: 100%;
+    width: 100%;
+    max-height: 500px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    flex-wrap:wrap; 
+    align-items: center;
+    box-sizing: border-box;
+    
+    gap: 2rem;
+    padding: 20px;
+
+    background-color: blue;
+}
+
+.testCard
+{
+    background-color: red;
+    border-radius: 5px;
+    padding: 20px;
+
+    min-width: 200px;
+    min-height: 300px;
+
+    box-sizing: border-box;
+    /* flex: 1; */
+}
+

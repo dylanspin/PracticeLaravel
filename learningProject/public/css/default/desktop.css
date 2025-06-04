@@ -1,0 +1,13 @@
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) and (min-height: 600px)
+{   
+    html
+    {
+        font-size: 12px !important;
+    }
+
+    .breakPointIndictor
+    {
+        background-color: green !important;
+    }
+}
