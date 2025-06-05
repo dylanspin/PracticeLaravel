@@ -30,6 +30,13 @@
   --hide-dark: 1;
   --transition-time: 0.3s ease;
   --radius-amount: 10px;
+  --radius-rounder: 20px;
+  --radius-round: 50px;
+
+  --status-active: #4ED438;
+  --status-inactive: #E27715;
+  --status-offline: #E21521;
+  --status-hidden: #3D3D3D;
 
   --grid-color: #2D2D2D;
   --grid-color-hover: rgba(255, 255, 255, 0.1);
@@ -167,4 +174,26 @@ html
 {
   opacity: var(--hide-dark);
   transition: var(--transition-time);
+}
+
+/* !!! Status of operator */
+
+.d-dot1
+{
+    background-color: var(--status-active);
+}
+
+.d-dot2
+{
+    background-color: var(--status-inactive);
+}
+
+.d-dot3
+{
+    background-color: var(--status-offline);
+}
+
+.d-dot4
+{
+    background-color: var(--status-hidden);
 }

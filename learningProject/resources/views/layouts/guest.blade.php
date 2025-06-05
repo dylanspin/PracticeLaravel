@@ -57,6 +57,7 @@
             </div>
         </div>
 
+
         <div class="d-login-wrapper">
             <div class="d-topSignin">
                 <span class="d-s7"><span  class="d-secondTextColor d-w1">@lang('general.sign_in')</span > <span class="d-mainTextColor">{{ config('app.name') }}</span></span>
