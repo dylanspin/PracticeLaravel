@@ -11,6 +11,8 @@
   --border-color: #292929;
   --complete-dark-color: #000000;
   --input-background: #0D0D0D;
+  --drop-down-color: #292929;
+  --drop-down-hover: #393939;
   --shadow: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.5)); 
   --main-text-color: #FFFFFF;
   --second-text-color: #969696;
@@ -49,6 +51,9 @@
   --second-text-color: #474747;
   --placeholder-text-color: #ECECEC;
   --input-background: #0D0D0D;
+  --drop-down-color: #ffffff;
+  --set-shadow: drop-shadow(5px 5px 4px #9a9a9a);
+  --drop-down-hover: #a0a0a0;
   --input-text-color: #ECECEC;
   --complete-dark-color: #ffffff;
   --logo-text: #000000;

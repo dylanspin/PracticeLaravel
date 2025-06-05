@@ -17,8 +17,8 @@
                 <input type="email" id="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="@lang('general.your_email')" class="d-loginInput d-generalStyle {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
-                    <img src="{{ asset('images/ui/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
-                    <img src="{{ asset('images/ui/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                    <img src="{{ asset('images/ui/icons/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
+                    <img src="{{ asset('images/ui/icons/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
                 </div>
             </div>
             
@@ -34,16 +34,16 @@
                 <input type="password" name="password" required autocomplete="current-password" placeholder="@lang('general.your_pass')" id="passwordInput" class="d-loginInput d-passwordInput d-generalStyle {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
-                    <img src="{{ asset('images/ui/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
-                    <img src="{{ asset('images/ui/PasswordIconLight.png') }}" alt="" class="d-showLight d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
+                    <img src="{{ asset('images/ui/icons/PasswordIconDark.png') }}" alt="" class="d-showDark d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
+                    <img src="{{ asset('images/ui/icons/PasswordIconLight.png') }}" alt="" class="d-showLight d-inputIcon {{ $errors->has('email') ? 'd-Ashake' : '' }}"/>
                 </div>
 
                 <button id="togglePassword" class="d-passwordButton">
-                    <img src="{{ asset('images/ui/showPassDark.png') }}" alt="" id="eyeIcon" class="d-showDark d-center-abs d-showPassIcon"/>
-                    <img src="{{ asset('images/ui/showPassLight.png') }}" alt="" id="eyeIcon2" class="d-showLight d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/icons/showPassDark.png') }}" alt="" id="eyeIcon" class="d-showDark d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/icons/showPassLight.png') }}" alt="" id="eyeIcon2" class="d-showLight d-center-abs d-showPassIcon"/>
 
-                    <img src="{{ asset('images/ui/hidePassDark.png') }}" alt="" id="eyeIconClosed" class="d-showDark d-center-abs d-showPassIcon"/>
-                    <img src="{{ asset('images/ui/hidePassLight.png') }}" alt="" id="eyeIconClosed2" class="d-showLight d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/icons/hidePassDark.png') }}" alt="" id="eyeIconClosed" class="d-showDark d-center-abs d-showPassIcon"/>
+                    <img src="{{ asset('images/ui/icons/hidePassLight.png') }}" alt="" id="eyeIconClosed2" class="d-showLight d-center-abs d-showPassIcon"/>
                 </button>
             </div>
 
@@ -54,8 +54,8 @@
             <label class="custom-checkbox">
                 <input id="remember_me" type="checkbox" name="remember"/>
                 <span class="checkmark">
-                    <img src="{{ asset('images/ui/checkIconDark.png') }}" alt="" class="tick-icon d-showDark d-center-abs" />
-                    <img src="{{ asset('images/ui/checkIcon.png') }}" alt="" class="tick-icon d-showLight d-center-abs" />
+                    <img src="{{ asset('images/ui/icons/checkIconDark.png') }}" alt="" class="tick-icon d-showDark d-center-abs" />
+                    <img src="{{ asset('images/ui/icons/checkIcon.png') }}" alt="" class="tick-icon d-showLight d-center-abs" />
                 </span>
                 <span class="d-rememberText">@lang('general.remember_me')</span>
             </label>
@@ -64,7 +64,7 @@
         <div class="d-center d-inputSpacingTop d-inputSpacing">
             <x-primary-button class="d-loginButton">
                 <div class="d-loginButtonBackground"></div>
-                <img src="{{ asset('images/ui/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
+                <img src="{{ asset('images/ui/icons/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
                 <div class="d-center-abs d-loginText">@lang('general.sign')</div>
             </x-primary-button>
         </div>

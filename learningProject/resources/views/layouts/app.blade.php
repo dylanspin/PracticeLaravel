@@ -25,7 +25,7 @@
 
         <!-- Page Content -->
        
-            @include('layouts.navigation')
+            {{-- @include('layouts.navigation') --}}
 
             <x-main.topnav></x-main.topnav>
 
@@ -34,7 +34,6 @@
             <main>
                 {{ $slot }}
             </main>
-
 
             <x-main.footer></x-main.footer>
 

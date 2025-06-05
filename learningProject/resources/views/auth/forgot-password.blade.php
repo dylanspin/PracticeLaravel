@@ -15,8 +15,8 @@
                 <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="@lang('general.your_email')" class="d-loginInput d-generalStyle  {{ $errors->has('email') ? 'd-errorInput' : '' }}"> 
                 
                 <div class="hideOnInput">
-                    <img src="{{ asset('images/ui/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
-                    <img src="{{ asset('images/ui/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
+                    <img src="{{ asset('images/ui/icons/EmailIconDark.png') }}" alt="" class="d-showDark d-inputIcon"/>
+                    <img src="{{ asset('images/ui/icons/EmailIconLight.png') }}" alt="" class="d-showLight d-inputIcon"/>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
 
              <x-primary-button class="d-loginButton">
                 <div class="d-loginButtonBackground"></div>
-                <img src="{{ asset('images/ui/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
+                <img src="{{ asset('images/ui/icons/Signinicon.png') }}" alt="" class="d-loginButtonIcon" />
                 <div class="d-center-abs d-loginText">@lang('general.send_reset')</div>
             </x-primary-button>
         </div>

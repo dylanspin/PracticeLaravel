@@ -2,7 +2,7 @@
 
 @if ($messages)
     <div {{ $attributes->merge(['class' => 'd-errorMessage']) }}>
-        <img src="{{ asset('images/ui/ErrorCross.png') }}" alt="" class="d-errorIcon"/>
+        <img src="{{ asset('images/ui/icons/ErrorCross.png') }}" alt="" class="d-errorIcon"/>
         
         <div class="d-errorText">
             <ul>

@@ -22,53 +22,51 @@
     </div>
 
     <div class="d-navRightSection">
-        <div class="d-rightBackgroundGradient">
-            
+        <div class="d-rightBackgroundGradient"></div>
+        
+        <div class="d-slantContainer">
+            <div class="d-topBarSlant"></div>
+            <div class="d-headerBackgroundFill"></div>
         </div>
     
-        <div class="d-searchButton">
-            
+        <div class="d-circleButton d-searchButton d-searchExpended">
+            <img src="{{ asset('images/ui/icons/SearchIconDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/SearchIconDark-2.png') }}" alt="" class="d-showDark d-circleIcon d-showHover"/>
+
+            <img src="{{ asset('images/ui/icons/SearchIconLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/SearchIconLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
         </div>
 
-        <div class="d-tabOverviewButton">
-            
+        <div class="d-circleButton d-tabOverviewButton">
+            <img src="{{ asset('images/ui/icons/TabsOverViewDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/TabsOverViewDark-2.png') }}" alt="" class="d-showDark d-circleIcon d-showHover"/>
+
+            <img src="{{ asset('images/ui/icons/TabsOverViewLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/TabsOverViewLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
         </div>
-        <div class="d-darkLigth">
-            
+
+        <div class="d-circleButton d-darkLigth" onclick="toggleTheme()">
+            <img src="{{ asset('images/ui/icons/MoonIconDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/MoonIconDark-2.png') }}" alt="" class="d-showDark d-circleIcon d-showHover"/>
+
+            <img src="{{ asset('images/ui/icons/SunIconLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/SunIconLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
         </div>
-        <div class="d-notifications">
-            
+
+        <div class="d-circleButton d-notifications">
+            <img src="{{ asset('images/ui/icons/NotifactionsDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/NotifactionsDark-2.png') }}" alt="" class="d-showDark d-circleIcon d-showHover"/>
+
+            <img src="{{ asset('images/ui/icons/NotifactionsLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
+            <img src="{{ asset('images/ui/icons/NotifactionsLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
         </div>
-        <div class="d-profile">
-            <div class="d-profileImage">
-                <img src="{{ asset('images/ui/ProfilePicTest.png') }}" alt="" class="d-imgFull"/>
-            </div>
-            <div class="d-dotContainer">
-                <div class="d-activityDot d-dot1"> </div>
-            </div>
-            <div class="d-userInfo"> 
-                <span class="d-ProfileUsername">Gerard Spin dsad dad dsadsd</span>
-                <span class="d-userProfileRole">Administrator</span>
-            </div>
-            
-            <img src="{{ asset('images/ui/UpDownIcon.png') }}" alt="" class="d-showDark d-profileDownIcon"/>
-            <img src="{{ asset('images/ui/UpDownIconDark.png') }}" alt="" class="d-showLight d-profileDownIcon"/>
-            
-            <div class="d-profileDropDownHitBox">
-                <div class="d-profileDropContent">
-                    test<br>
-                    test<br>
-                    test<br>
-                    test<br>
-                    test<br>
-                </div>
-            </div>
-        </div>
+        
+        {{-- ?? PROFIL DROP DOWN --}}
+        <x-main.profileDropDown></x-main.profileDropDown>
     </div>
 
 </header>
 
-<script src="{{ asset('js/spinningBal.js') }}"></script>
-
+<script src="{{ asset('js/theme.js') }}"></script>
 
 <script src="{{ asset('js/topNav.js') }}"></script>

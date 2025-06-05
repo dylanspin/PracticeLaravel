@@ -72,21 +72,21 @@
         <div class="d-bottomLoginSettings"> <!--- top right language/dark theme switcher --->
             
             <button class="d-loginDarkThemeButton d-border-white d-s6 d-mainTextColor" onclick="toggleTheme()">
-                <img src="{{ asset('images/ui/moonWhite.png') }}" alt="" class="d-showDark d-center-abs d-loginIcon" />
-                <img src="{{ asset('images/ui/Sun-black.png') }}" alt="" class="d-showLight d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/icons/moonWhite.png') }}" alt="" class="d-showDark d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/icons/Sun-black.png') }}" alt="" class="d-showLight d-center-abs d-loginIcon" />
                 
-                <img src="{{ asset('images/ui/moonDark.png') }}" alt="" class="d-showDark d-iconShowHover d-center-abs d-loginIcon" />
-                <img src="{{ asset('images/ui/Sun-light.png') }}" alt="" class="d-showLight d-iconShowHover d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/icons/moonDark.png') }}" alt="" class="d-showDark d-iconShowHover d-center-abs d-loginIcon" />
+                <img src="{{ asset('images/ui/icons/Sun-light.png') }}" alt="" class="d-showLight d-iconShowHover d-center-abs d-loginIcon" />
             </button>
             
             <div class="d-languageDropDown d-border-white d-s6 d-mainTextColor">
-                <img src="{{ asset('images/ui/languageIconLight.png') }}" alt="" class="d-showDark d-loginIcon d-languageIcon"/>
-                <img src="{{ asset('images/ui/languageIconDark.png') }}" alt="" class="d-showLight d-loginIcon d-languageIcon"/>
+                <img src="{{ asset('images/ui/icons/languageIconLight.png') }}" alt="" class="d-showDark d-loginIcon d-languageIcon"/>
+                <img src="{{ asset('images/ui/icons/languageIconDark.png') }}" alt="" class="d-showLight d-loginIcon d-languageIcon"/>
 
                 <div class="d-currentLanguage">@lang('general.this_language')</div>
 
-                <img src="{{ asset('images/ui/UpDownIconDark.png') }}" alt="" class="d-showLight d-upDownIcon"/>
-                <img src="{{ asset('images/ui/UpDownIcon.png') }}" alt="" class="d-showDark d-upDownIcon"/>
+                <img src="{{ asset('images/ui/icons/UpDownIconDark.png') }}" alt="" class="d-showLight d-upDownIcon"/>
+                <img src="{{ asset('images/ui/icons/UpDownIcon.png') }}" alt="" class="d-showDark d-upDownIcon"/>
 
                 <div class="dropdown-content custom-scroll">
                     
