@@ -202,6 +202,7 @@ body
     height: 63%;
     width: 9vw;
     min-width: 150px;
+    max-width: 200px;
     margin-left: 0.5vw;
 
     border-radius: var(--radius-round);
@@ -225,6 +226,7 @@ body
 .d-profile:hover 
 {
     border: solid var(--border-size) var(--input-text-color) !important;
+    background-color: var(--second-color);
 }
 
 .d-profileImage
@@ -537,7 +539,7 @@ body
 {
     height: 63%;
     aspect-ratio: 1/1;
-    /* max-width: 10vw; */
+    max-width: 10vw;
 
     background-color: var(--main-color);
     border-radius: var(--radius-round);
@@ -558,7 +560,7 @@ body
 
 .d-circleButton:hover
 {
-    border: solid var(--border-size) var(--second-text-color);
+    border: solid var(--border-size) var(--input-text-color);
 }
 
 .d-circleIcon
@@ -570,6 +572,28 @@ body
     top: 50%;
 
     transform: translate(-50%, -50%);
+}
+
+.d-messageDot
+{
+    position: absolute;
+    height: 12px;
+    aspect-ratio: 1 / 1;
+
+    bottom: 20%;
+    right: 15%;
+
+    border-radius: 100%;
+    border-width: 3px;
+    border-color: var(--main-color);
+
+    transition: var(--transition-time);
+}
+
+.d-circleButton:hover .d-messageDot
+{
+    height: 0px;
+    width: 0px;
 }
 
 .d-circleButton:hover .d-dontShowHover 
@@ -603,6 +627,8 @@ body
   transform: translate(-50%, -50%) scale(1.02);
 }
 
+/* right top nav section */
+
 .d-slantContainer
 {
     position: absolute;
@@ -614,7 +640,6 @@ body
 
     display: flex;
     overflow-y: clip;  
-
 }
 
 .d-headerBackgroundFill
@@ -639,29 +664,365 @@ body
     background-color: var(--main-color);
 }
 
-.d-searchExpended
-{
-    padding-left: 5%;
-    max-width: 4vw;
+/* ? searchBar component */
 
+.search-wrapper 
+{
+    height: 63%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.3vw;
+}
+
+.search-container 
+{
+    position: relative;
+    height: 100%;
+    width: var(--circle-size); /* Set by JS */
+    background-color: var(--main-color);
+    border-radius: 100vmax;
+    border: solid var(--border-size) var(--border-color);
+    filter: var(--set-shadow);
+
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    overflow: hidden;
+
+    transition: var(--transition-time);
+    opacity: 0; 
+}
+
+.search-container.ready {
+    opacity: 1;
+    transition: var(--transition-time);
+}
+
+.search-container input 
+{
+    all: unset;
+    flex: 1 1 auto;       /* This lets input grow but shrink back too */
+    white-space: nowrap;
+    min-width: 0;         /* VERY important to allow shrinking */
+
+    margin-left: 15%;
+    height: 100%;
+
+    color: var(--input-text-color);
+    font-size: 1.2rem;
+    font-weight: 100;
+
+    opacity: 0;
+
+    pointer-events: none;
+    transition: opacity var(--transition-time);
+}
+
+.search-container input:focus 
+{
+    outline: none;
+    box-shadow: none;
+}
+
+/* Expand on hover or focus or if text is entered */
+.search-container:hover,
+.search-container:has(input:focus),
+.search-container:has(input:not(:placeholder-shown)) 
+{
+    width: 200px;
+    border: solid var(--border-size) var(--input-text-color);
+}
+
+.search-container:hover input,
+.search-container:has(input:focus) input,
+.search-container:has(input:not(:placeholder-shown)) input 
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-container:hover .search-icon,
+.search-container:has(input:focus) .search-icon,
+.search-container:has(input:not(:placeholder-shown)) .search-icon
+{
+    left: 10%;
+}
+
+.search-container:hover .d-dontShowHover,
+.search-container:has(input:focus) .d-dontShowHover,
+.search-container:has(input:not(:placeholder-shown)) .d-dontShowHover
+{
+    transform: scale(0);
+    /* left: 10%; */
+}
+
+.search-container:hover .d-showHover ,
+.search-container:has(input:focus) .d-showHover ,
+.search-container:has(input:not(:placeholder-shown)) .d-showHover 
+{
+    /* left: 10%; */
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+.search-icon 
+{
+    position: absolute;
+    left: 50%;
+    height: 50%;
+    width: auto;
+
+    transition: var(--transition-time);
+    
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ! --------------- side nav section --------------- */
+
+
+:root 
+{
+    --topSectionSectionHeight: 40px;
+    --sideNavWidth: 4rem;
+}
+
+.d-sideNav
+{
+    position: absolute;
+    height: auto;
+    width: var(--sideNavWidth);
+    /* background-color: var(--second-color); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vh;
+    margin-left: 0.5vw;
+    transition: var(--transition-time);
+
+    z-index: 1;
+}
+
+.d-sideNavTop
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+    background-color: var(--second-color); 
+    border-radius: var(--radius-rounder);
+    filter: var(--set-shadow);
+    /* padding-left: 1.5rem; */
+    /* padding-right: 1.5rem; */
+   
+    overflow: hidden;
+    display: flex;
+}
+
+.d-TopSplit3
+{
+    position: relative;
+    width: 4rem;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-sideNav:hover
+{
+    width: 12rem;
+}
+
+.d-sideNavTopButton
+{
+    position: relative;
+    height: 60%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    
+    background-color: var(--main-color);
+    border-radius: var(--radius-round);
+    border: solid var(--border-size) var(--border-color);
+    filter: var(--set-shadow2);
 
     transition: var(--transition-time);
 }
 
-.d-searchExpended:hover
+.d-sideNavTopButton:hover
 {
-    max-width: 8vw;
+    border: solid var(--border-size) var(--input-text-color);
+}
+
+.d-circleButton:active {
+  transform: scale(0.98);
+}
+
+.d-sideNavSection
+{
+    position: relative;
+    width: 100%;
+    min-height: var(--topSectionSectionHeight);
+    max-height: var(--topSectionSectionHeight);
+    height: auto;
+
+    border-radius: var(--radius-rounder);
+    background-color: var(--second-color); 
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    transition: var(--transition-time)
+}
+
+.d-sideNavSection:hover
+{
+    max-height: 100vh;
+}
+
+.d-sideNavSection:hover .d-snFoldIcon
+{
+    transform: rotate(0deg);
+}
+
+.d-topSideNavSection
+{
+    position: relative;
+    width: 100%;
+    height: var(--topSectionSectionHeight);
+    top: 0px;
+    left: 0px;
+    
+    display: flex;
+}
+
+.d-smIconSection
+{
+    position: relative;
+    height: 100%;
+    width: var(--sideNavWidth);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-snFoldIcon
+{
+    position: absolute;
+    width: 1rem;
+    height: auto;
+    left: auto;
+    transform: rotate(180deg);
+    transition: var(--transition-time);
+}
+
+.d-smFoldTitle 
+{
+    position: relative;
+    left: 20px;
+    flex: 1; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 1.2rem;
+}
+
+.d-sideNavLink
+{
+    position: relative;
+    height: 3rem;
+    width: 100%;
+    background-color: var(--second-color);
+    transition: var(--transition-time);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.d-sideNavLink span
+{
+    position: relative;
+    z-index: 1; /* ensure content appears above */
+}
+
+.d-sideNavHoverBackground
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0px;
+    z-index: 0; /* Push behind */
+
+    opacity: 0;
+    background-color: var(--drop-down-hover);
+
+    transition: var(--transition-time);
+}
+
+.d-sideNavLink:hover .d-sideNavHoverBackground
+{
+    left: 0%;
+    opacity: 0.8;
+}
+
+.d-sideLinkIconSection
+{
+    position: relative;
+    width: var(--sideNavWidth);
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: ; */
+}
+
+.d-sideLinkIcon
+{
+    position: absolute;
+    height: 60%;
+    left: auto;
+    width: auto;
+}
+
+.d-DontShow
+{
+    transform: scale(1);
+    transition: var(--transition-time);
+}
+
+.d-Show
+{
+    transform: scale(0);
+    transition: var(--transition-time);
+}
+
+.d-sideNavLink:hover .d-DontShow
+{
+    transform: scale(0);
+}
+
+.d-sideNavLink:hover .d-Show
+{
+    transform: scale(1);
 }
 
 
-
-/* ! --------------- side nav section --------------- */
-
-.d-sideNav
+.d-newSectionButton
 {
-    height: auto;
-    width: 3rem;
-    background-color: red;
+  
+    /* the + for new section at the bottom */
 }
 
 /* ! --------------- footer section --------------- */
@@ -669,10 +1030,11 @@ body
 .d-footer
 {
     position: relative;
-
     margin-top: 200px;
     height: 300px;
     width: 100wv;
+    bottom: 0px;
+    left: 0px;
 
     background-color: var(--complete-dark-color);
 }

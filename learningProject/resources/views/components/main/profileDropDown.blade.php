@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="d-dropDownButton d-buttonMargin">
+            <a class="d-dropDownButton d-buttonMargin" href="/faq">
                 <div class="d-buttonBackgroundHover"></div>
                 <div class="d-iconSectionButton">
                     <img src="{{ asset('images/ui/icons/Help iconDark-1.png') }}" alt="" class="d-showDark d-dropDownIcon d-dontShowHover"/>
@@ -57,7 +57,7 @@
                 <div class="d-dropDownText">
                     Need help?
                 </div>
-            </div>
+            </a>
             
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

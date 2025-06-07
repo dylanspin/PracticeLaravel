@@ -38,7 +38,11 @@ Route::middleware(['auth'])->group(function () {
         'ui' => 'mainPages.ui_ux',
         'ai' => 'mainPages.ai',
         'profilesettings' => 'mainPages.profile_settings',
-        'faw' => 'mainPages.faq',
+        'faq' => 'mainPages.faq',
+        'disclaimer' => 'mainPages.disclaimer',
+        'cookies' => 'mainPages.cookies',
+        'privacy' => 'mainPages.privacy',
+        'terms' => 'mainPages.terms',
         'tickets' => 'mainPages.tickets',
         'logbook' => 'mainPages.logbook',
     ];

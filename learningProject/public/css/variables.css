@@ -26,6 +26,7 @@
   --border-size-hover: 2px;
   --back-blur-amount: 10px;
   --set-shadow: drop-shadow(5px 5px 4px #000000);
+  --set-shadow2: drop-shadow(2px 2px 4px #000000);
   --text-shadow: 5px 5px 4px #000000;
   --set-line-height: 1.5;
   --hide-light: 0;
@@ -53,6 +54,7 @@
   --input-background: #0D0D0D;
   --drop-down-color: #ffffff;
   --set-shadow: drop-shadow(5px 5px 4px #9a9a9a);
+  --set-shadow2: drop-shadow(2px 2px 4px #9a9a9a);
   --drop-down-hover: #a0a0a0;
   --input-text-color: #ECECEC;
   --complete-dark-color: #ffffff;

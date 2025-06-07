@@ -29,13 +29,7 @@
             <div class="d-headerBackgroundFill"></div>
         </div>
     
-        <div class="d-circleButton d-searchButton d-searchExpended">
-            <img src="{{ asset('images/ui/icons/SearchIconDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
-            <img src="{{ asset('images/ui/icons/SearchIconDark-2.png') }}" alt="" class="d-showDark d-circleIcon d-showHover"/>
-
-            <img src="{{ asset('images/ui/icons/SearchIconLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
-            <img src="{{ asset('images/ui/icons/SearchIconLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
-        </div>
+        <x-main.searchBar></x-main.searchBar>
 
         <div class="d-circleButton d-tabOverviewButton">
             <img src="{{ asset('images/ui/icons/TabsOverViewDark-1.png') }}" alt="" class="d-showDark d-circleIcon d-dontShowHover"/>
@@ -59,6 +53,8 @@
 
             <img src="{{ asset('images/ui/icons/NotifactionsLight-1.png') }}" alt="" class="d-showLight d-circleIcon d-dontShowHover"/>
             <img src="{{ asset('images/ui/icons/NotifactionsLight-2.png') }}" alt="" class="d-showLight d-circleIcon d-showHover"/>
+    
+            <div class="d-messageDot d-dot1"> </div>
         </div>
         
         {{-- ?? PROFIL DROP DOWN --}}
@@ -67,6 +63,7 @@
 
 </header>
 
+<script src="{{ asset('js/searchInput.js') }}"></script>
 <script src="{{ asset('js/theme.js') }}"></script>
 
 <script src="{{ asset('js/topNav.js') }}"></script>
